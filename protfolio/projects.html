@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protfolio</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #0b3e4a;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            margin: 10px;
+            position: relative;
+        }
+
+
+
+        header ul {
+            list-style-type: none;
+            padding: 0;
+
+        }
+
+        header ul li {
+            display: inline;
+            margin-right: 20px;
+
+        }
+
+        header ul li a {
+            color: rgb(227, 217, 26);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Download Resume button styling */
+        .resume-download {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            background-color: rgb(227, 217, 26);
+            /* matches your menu color */
+            color: black;
+            padding: 8px 15px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            border: 2px solid white;
+            transition: 0.3s;
+        }
+
+        .resume-download:hover {
+            background-color: white;
+            color: black;
+            border-color: rgb(227, 217, 26);
+        }
+
+        .projects-page {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .section-title {
+            padding-left: 10px;
+            border-left: 5px solid #222;
+            font-size: 30px;
+            margin-bottom: 30px;
+        }
+
+        .proj-cert-grid {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            flex: 1;
+            min-width: 320px;
+            background: #fff;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+        }
+
+        .sub-title {
+            margin-top: 0;
+            padding-left: 10px;
+            border-left: 5px solid #222;
+            font-size: 22px;
+            margin-bottom: 20px;
+        }
+
+        .list {
+            padding-left: 20px;
+            line-height: 1.7;
+            font-size: 17px;
+        }
+
+        .list li {
+            margin-bottom: 10px;
+        }
+        /* ---------------------------
+   MOBILE RESPONSIVE FIXES
+----------------------------*/
+
+/* Make all images scale */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Fix header layout on mobile */
+@media (max-width: 600px) {
+
+    header {
+        padding: 15px 5px;
+        text-align: center;
+    }
+
+    header img {
+        width: 120px;
+        height: 120px;
+    }
+
+    header h1 {
+        font-size: 22px;
+    }
+
+    header h3 {
+        font-size: 16px;
+    }
+
+    header h4 {
+        font-size: 14px;
+    }
+
+    /* Stack menu items vertically */
+    header ul li {
+        display: block;
+        margin: 5px 0;
+    }
+
+    /* Move resume download button under menu */
+    .resume-download {
+        position: static;
+        display: inline-block;
+        margin-top: 10px;
+    }
+}
+
+/* Make technical skills grid responsive */
+@media (max-width: 900px) {
+    .tech-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* Resize cards on smaller screens */
+@media (max-width: 600px) {
+    .card {
+        padding: 15px;
+        font-size: 14px;
+    }
+
+    .tech-box {
+        padding: 14px;
+    }
+
+    .tech-box h3 {
+        font-size: 16px;
+    }
+
+    .skill-header {
+        font-size: 18px;
+    }
+}
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>NILAUVARASI VS</h1>
+        <img src="../protfolio/images/cropped_circle_image.png" width="200" height="200">
+        
+        <h4>Electronics and Communication Engineer</h4>
+        <ul>
+
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="skills.html">SKILLS</a></li>
+            <li><a href="projects.html">PROJECTS</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+
+        </ul>
+        <a href="NilaCV.pdf" download class="resume-download">Download Resume</a>
+
+    </header>
+    <div class="projects-page">
+
+        <!-- PAGE TITLE -->
+        <h1 class="section-title">Projects & Certifications</h1>
+
+        <!-- GRID -->
+        <div class="proj-cert-grid">
+
+            <!-- PROJECTS CARD -->
+            <section class="card">
+                <h2 class="sub-title">Projects</h2>
+                <ul class="list">
+                    <li><strong>AI Navigation for Blind People</strong> (Currently Working)</li>
+                    <li>Accident Avoiding Car</li>
+                    <li>Smart and Secure Railway Gate System</li>
+                    <li>Smart Irrigation System</li>
+                    <li>Fire Detection and Alert System</li>
+                    <li>Smart Water Tank System</li>
+                </ul>
+            </section>
+
+            <!-- CERTIFICATIONS CARD -->
+            <section class="card">
+                <h2 class="sub-title">Certifications</h2>
+                <ul class="list">
+                    <li>Diploma in Electronics Mastery – LMES Academy & Chitti</li>
+                    <li>Raspberry Pi for Beginners – HCI GUVI</li>
+                    <li>Analog Electronics – HCI GUVI</li>
+                    <li>AWS Certification – Amazon Web Services</li>
+                    <li>Silver Elite – NPTEL Industrial IoT</li>
+                    <li>Python Certification – HCI GUVI</li>
+                    <li>Generative AI Certification – HCI GUVI</li>
+                    <li>VLSI for Beginners – NIELIT Calicut</li>
+                    <li>MongoDB Basics – MongoDB University</li>
+                    <li>Learnathon Certification – ICT Academy</li>
+                    <li>Internet of Things & Robotics (A+ Grade) – Rinex Technology</li>
+                    <li>Basic Coding in C & Java – Brototype</li>
+                </ul>
+            </section>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Protfolio</title>
+
+  <style>
+    :root {
+      --maxw: 1100px;
+      --card-bg: #fff;
+      --muted: #666;
+      --accent: #222;
+    }
+
+    body {
+      padding: 10px;
+      margin: 0;
+      background: #f6f6f6;
+      color: #111;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    header {
+      background-color: #0b3e4a;
+      color: white;
+      padding: 10px 0;
+      text-align: center;
+      margin: 10px;
+      position: relative;
+    }
+
+
+
+    header ul {
+      list-style-type: none;
+      padding: 0;
+
+    }
+
+    header ul li {
+      display: inline;
+      margin-right: 20px;
+
+    }
+
+    header ul li a {
+      color: rgb(227, 217, 26);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    /* Download Resume button styling */
+    .resume-download {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      background-color: rgb(227, 217, 26);
+      /* matches your menu color */
+      color: black;
+      padding: 8px 15px;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 5px;
+      border: 2px solid white;
+      transition: 0.3s;
+    }
+
+    .resume-download:hover {
+      background-color: white;
+      color: black;
+      border-color: rgb(227, 217, 26);
+    }
+
+    .page {
+      max-width: var(--maxw);
+      margin: 0 auto;
+    }
+
+    h1 {
+      margin: 6px 0 18px;
+      font-size: 26px;
+      padding-left: 10px;
+      border-left: 5px solid var(--accent);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 480px;
+      /* left column flexible, right column fixed (map) */
+      gap: 28px;
+      align-items: start;
+    }
+
+    /* Left column card (contact details & links) */
+    .card {
+      background: var(--card-bg);
+      padding: 22px;
+      border-radius: 8px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+    }
+
+    .contact-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .contact-list li {
+      margin-bottom: 10px;
+      display: flex;
+      gap: 12px;
+      align-items: baseline;
+    }
+
+    .label {
+      min-width: 130px;
+      font-weight: 700;
+    }
+
+    .value a {
+      color: var(--accent);
+      text-decoration: none;
+      word-break: break-word;
+    }
+
+    .value a:hover {
+      text-decoration: underline;
+    }
+
+    /* social links row */
+    .socials {
+      margin-top: 18px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .socials a {
+      display: inline-block;
+      padding: 10px 14px;
+      border-radius: 6px;
+      background: #f3f3f3;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+    }
+
+    .socials a:hover {
+      background-color: #0b3e4a;
+      color: white;
+    }
+
+    /* Map column */
+    .map-card {
+      padding: 0;
+      /* we want the map to fill the card */
+      overflow: hidden;
+    }
+
+    .map-frame {
+      border: 0;
+      width: 100%;
+      height: 100%;
+      min-height: 360px;
+      display: block;
+    }
+
+    /* small-screen responsive */
+    @media (max-width: 900px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .map-frame {
+        min-height: 260px;
+      }
+    }
+
+    /* optional small note */
+    .note {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    /* ---------------------------
+   MOBILE RESPONSIVE FIXES
+----------------------------*/
+
+/* Make all images scale */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Fix header layout on mobile */
+@media (max-width: 600px) {
+
+    header {
+        padding: 15px 5px;
+        text-align: center;
+    }
+
+    header img {
+        width: 120px;
+        height: 120px;
+    }
+
+    header h1 {
+        font-size: 22px;
+    }
+
+    header h3 {
+        font-size: 16px;
+    }
+
+    header h4 {
+        font-size: 14px;
+    }
+
+    /* Stack menu items vertically */
+    header ul li {
+        display: block;
+        margin: 5px 0;
+    }
+
+    /* Move resume download button under menu */
+    .resume-download {
+        position: static;
+        display: inline-block;
+        margin-top: 10px;
+    }
+}
+
+/* Make technical skills grid responsive */
+@media (max-width: 900px) {
+    .tech-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* Resize cards on smaller screens */
+@media (max-width: 600px) {
+    .card {
+        padding: 15px;
+        font-size: 14px;
+    }
+
+    .tech-box {
+        padding: 14px;
+    }
+
+    .tech-box h3 {
+        font-size: 16px;
+    }
+
+    .skill-header {
+        font-size: 18px;
+    }
+}
+
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>NILAUVARASI VS</h1>
+    <img src="../protfolio/images/cropped_circle_image.png" width="200" height="200">
+    
+    <h4>Electronics and Communication Engineer</h4>
+    <ul id="home">
+
+      <li><a href="index.html">HOME</a></li>
+      <li><a href="about.html">ABOUT</a></li>
+      <li><a href="skills.html">SKILLS</a></li>
+      <li><a href="projects.html">PROJECTS</a></li>
+      <li><a href="contact.html">CONTACT</a></li>
+
+
+    </ul>
+    <a href="NilaCV.pdf" download class="resume-download">Download Resume</a>
+
+  </header>
+  <main class="page" aria-labelledby="pageTitle">
+    <h1 id="pageTitle">Contact</h1>
+
+    <div class="contact-grid">
+
+      <!-- LEFT: contact details + social links -->
+      <section class="card" aria-labelledby="contactHeading">
+        <h2 id="contactHeading" style="margin-top:0; font-size:20px;">Get in touch</h2>
+
+        <ul class="contact-list" role="list">
+          <li>
+            <div class="label">Email</div>
+            <div class="value">
+              <a href="mailto:nila.margosri05@gmail.com"
+                aria-label="Send email to Nilauvarasi">nila.margosri05@gmail.com</a>
+            </div>
+          </li>
+
+          <li>
+            <div class="label">Phone</div>
+            <div class="value">
+              <a href="tel:+919487647809" aria-label="Call Nilauvarasi">+91 94876 47809</a>
+            </div>
+          </li>
+
+          <li>
+            <div class="label">Address</div>
+            <div class="value">
+              19, Mahalakshmi nagar,<br>
+              South Palpanaicherry,<br>
+              Nagapattinam - 611003
+            </div>
+          </li>
+        </ul>
+
+        <div class="socials" aria-label="Social links">
+          <!-- LinkedIn -->
+          <a href="https://www.linkedin.com/in/nilauvarasi-vs-67120a281" target="_blank" rel="noopener noreferrer"
+            aria-label="Open LinkedIn profile (opens in a new tab)">
+            LinkedIn
+          </a>
+
+          <!-- GitHub -->
+          <a href="https://github.com/Nilauvarasi-VS" target="_blank" rel="noopener noreferrer"
+            aria-label="Open GitHub profile (opens in a new tab)">
+            GitHub
+          </a>
+        </div>
+
+        <p class="note">Click email or phone to contact directly. Social links open in a new tab.</p>
+      </section>
+
+      <!-- RIGHT: Google Map embed -->
+      <aside class="card map-card" aria-label="Map showing address">
+        <!--
+           The iframe below uses a Google Maps query embed. It works without an API key.
+           If you prefer to embed using coordinates, replace the "q=" value with "ll=LAT,LNG" or use a full maps embed URL.
+        -->
+        <iframe class="map-frame" title="My Location"
+          src="https://www.google.com/maps/embed?pb=!4v1765513130302!6m8!1m7!1sn-DBPFAhZe0r9eAeVVhBQA!2m2!1d10.79294988897714!2d79.84326443779865!3f42.548023203806686!4f-4.019041363060836!5f0.7820865974627469"
+          width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+
+      </aside>
+
+    </div><!-- .contact-grid -->
+
+  </main>
+</body>
+
+</html>

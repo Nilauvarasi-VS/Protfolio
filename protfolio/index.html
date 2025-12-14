@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protfolio</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #0b3e4a;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            margin: 10px;
+            position: relative;
+        }
+
+
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+
+        }
+
+        ul li {
+            display: inline;
+            margin-right: 20px;
+
+        }
+
+        ul li a {
+            color: rgb(227, 217, 26);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Download Resume button styling */
+        .resume-download {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            background-color: rgb(227, 217, 26);
+            /* matches your menu color */
+            color: black;
+            padding: 8px 15px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            border: 2px solid white;
+            transition: 0.3s;
+        }
+
+        .resume-download:hover {
+            background-color: white;
+            color: black;
+            border-color: rgb(227, 217, 26);
+        }
+
+        #obj {
+            background-color: white;
+            margin: 20px auto;
+            padding: 20px;
+            max-width: 1000px;
+            justify-content: center;
+        }
+
+        .edu-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            font-size: 18px;
+        }
+
+        .edu-table th,
+        .edu-table td {
+            border: 1px solid black;
+            padding: 12px;
+            text-align: left;
+        }
+
+        .edu-table th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+
+        #ACTIVITIES {
+            text-align: center;
+            margin-top: 40px;
+            color: #0b3e4a;
+        }
+
+        /* container sizing — match your page width */
+        #linkedin-activities .container {
+            max-width: 1100px;
+            margin: 30px auto;
+            padding: 0 16px;
+        }
+
+        /* each topic card */
+        .topic {
+            background: #fff;
+            padding: 20px;
+            margin-bottom: 26px;
+            border-radius: 8px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+        }
+
+        /* topic title */
+        .topic-title {
+            margin: 0 0 12px;
+            font-size: 20px;
+            padding-left: 10px;
+            border-left: 5px solid #222;
+        }
+
+        /* make iframe responsive — wrapper maintains aspect/renders full width */
+        .embed-wrapper {
+            position: relative;
+            width: 100%;
+            /* if you prefer a consistent 16:9 aspect use padding-bottom:56.25% and remove fixed iframe height */
+        }
+
+        /* optional: ensure iframe does not overflow */
+        .embed-wrapper iframe {
+            width: 100%;
+            border: 0;
+            min-height: 320px;
+            /* fallback height, increase for long posts */
+        }
+
+        /* small screen spacing */
+        @media (max-width: 700px) {
+            #linkedin-activities .container {
+                padding: 0 12px;
+            }
+
+            .topic {
+                padding: 16px;
+            }
+        }
+   /* ---------------------------
+   MOBILE RESPONSIVE FIXES
+----------------------------*/
+
+/* Make all images scale */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Fix header layout on mobile */
+@media (max-width: 600px) {
+
+    header {
+        padding: 15px 5px;
+        text-align: center;
+    }
+
+    header img {
+        width: 120px;
+        height: 120px;
+    }
+
+    header h1 {
+        font-size: 22px;
+    }
+
+    header h3 {
+        font-size: 16px;
+    }
+
+    header h4 {
+        font-size: 14px;
+    }
+
+    /* Stack menu items vertically */
+    header ul li {
+        display: block;
+        margin: 5px 0;
+    }
+
+    /* Move resume download button under menu */
+    .resume-download {
+        position: static;
+        display: inline-block;
+        margin-top: 10px;
+    }
+}
+
+/* Make technical skills grid responsive */
+@media (max-width: 900px) {
+    .tech-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* Resize cards on smaller screens */
+@media (max-width: 600px) {
+    .card {
+        padding: 15px;
+        font-size: 14px;
+    }
+
+    .tech-box {
+        padding: 14px;
+    }
+
+    .tech-box h3 {
+        font-size: 16px;
+    }
+
+    .skill-header {
+        font-size: 18px;
+    }
+}
+
+   </style>
+</head>
+
+<body>
+    <header>
+        <h1>NILAUVARASI VS</h1>
+        <img src="../protfolio/images/cropped_circle_image.png" width="200" height="200">
+        
+        <h4>Electronics and Communication Engineer</h4>
+        <ul>
+
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="skills.html">SKILLS</a></li>
+            <li><a href="projects.html">PROJECTS</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+        <a href="NilaCV.pdf" download class="resume-download">Download Resume</a>
+
+    </header>
+    <div id="obj">
+        <h2>CAREER OBJECTIVES</h2>
+        <P>As an enthusiastic Electronics and Communication Engineering graduate with hands-on experience in embedded
+            systems, IoT, PCB design, drone assembly and flying, and full stack web technologies (HTML, CSS, Python,
+            Java and C programming), I am seeking a challenging role where I can apply my multidisciplinary skillset to
+            develop innovative solutions in technology-driven environments</P>
+        <h2>EDUCATION</h2>
+        <table class="edu-table">
+            <tr>
+                <th>Course</th>
+                <th>Institution</th>
+                <th>Year</th>
+            </tr>
+            <tr>
+                <td>B.E. Electronics and Communication Engineering</td>
+                <td>Dhanalakshmi Srinivasan Engineering College, Perambalur</td>
+                <td>2026</td>
+            </tr>
+            <tr>
+                <td>HSLC</td>
+                <td>Amrita Vidyalayam CBSE School, Nagapattinam</td>
+                <td>2022</td>
+            </tr>
+            <tr>
+                <td>SSLC</td>
+                <td>Amrita Vidyalayam CBSE School, Nagapattinam</td>
+                <td>2020</td>
+            </tr>
+        </table>
+
+    </div>
+    <h1 ID="ACTIVITIES">ACTIVITIES</h1>
+    <!-- SECTION: LinkedIn activity posts under Education -->
+    <section id="linkedin-activities" class="section">
+        <div class="container">
+
+            <!-- Topic 1 -->
+            <article class="topic">
+                <h3 class="topic-title">Semicon 2025</h3>
+
+                <div class="embed-wrapper">
+                    <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:activity:7376247948634083329"
+                        height="550" width="100%" frameborder="0" allowfullscreen=""
+                        title="LinkedIn post: Semicon 2025">
+                    </iframe>
+
+                    <noscript>
+                        <p>Embedded content requires JavaScript. <a
+                                href="https://www.linkedin.com/posts/nilauvarasi-vs-67120a281_semicon2025-innovation-technology-activity-7376247948634083329-YSe6"
+                                target="_blank" rel="noopener noreferrer">Open LinkedIn post</a></p>
+                    </noscript>
+                </div>
+            </article>
+
+            <!-- Topic 1 -->
+            <article class="topic">
+                <h3 class="topic-title">Automatic Railway Gate System</h3>
+                <div class="embed-wrapper">
+                    <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:activity:7233502408230744064"
+                        height="550" width="100%" frameborder="0" allowfullscreen=""
+                        title="LinkedIn Post: Automatic Railway Gate System"></iframe>
+                    <noscript>
+                        <p><a
+                                href="https://www.linkedin.com/posts/nilauvarasi-vs-67120a281_an-automatic-railway-gate-system-enhances-activity-7233502408230744064-xr1k">View
+                                Post</a></p>
+                    </noscript>
+                </div>
+            </article>
+
+            <!-- Topic 2 -->
+            <article class="topic">
+                <h3 class="topic-title">Automatic Brake System</h3>
+                <div class="embed-wrapper">
+                    <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:activity:7233498477379366913"
+                        height="550" width="100%" frameborder="0" allowfullscreen=""
+                        title="LinkedIn Post: Automatic Brake System"></iframe>
+                    <noscript>
+                        <p><a
+                                href="https://www.linkedin.com/posts/nilauvarasi-vs-67120a281_the-automatic-brake-system-is-an-innovative-activity-7233498477379366913-3fIl">View
+                                Post</a></p>
+                    </noscript>
+                </div>
+            </article>
+
+            <!-- Topic 3 -->
+            <article class="topic">
+                <h3 class="topic-title">SIH 2025 – GreenPulse Project</h3>
+                <div class="embed-wrapper">
+                    <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:activity:7380596485605937154"
+                        height="550" width="100%" frameborder="0" allowfullscreen=""
+                        title="LinkedIn Post: SIH 2025 GreenPulse"></iframe>
+                    <noscript>
+                        <p><a
+                                href="https://www.linkedin.com/posts/sivanesh10_sih2025-greenpulse-innovationforindia-activity-7380596485605937154-6PnC">View
+                                Post</a></p>
+                    </noscript>
+                </div>
+            </article>
+
+            <!-- Topic 4 -->
+            <article class="topic">
+                <h3 class="topic-title">Electronics Mastery Course Completion</h3>
+                <div class="embed-wrapper">
+                    <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:activity:7236261966158163968"
+                        height="550" width="100%" frameborder="0" allowfullscreen=""
+                        title="LinkedIn Post: Electronics Mastery Course"></iframe>
+                    <noscript>
+                        <p><a
+                                href="https://www.linkedin.com/posts/nilauvarasi-vs-67120a281_completed-electronics-mastery-course-conducted-activity-7236261966158163968-9s6S">View
+                                Post</a></p>
+                    </noscript>
+                </div>
+            </article>
+
+            <!-- Topic 5 -->
+            <article class="topic">
+                <h3 class="topic-title">Raspberry Pi & IoT Hands-on Session</h3>
+                <div class="embed-wrapper">
+                    <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:activity:7387024483896868864"
+                        height="550" width="100%" frameborder="0" allowfullscreen=""
+                        title="LinkedIn Post: Raspberry Pi IoT"></iframe>
+                    <noscript>
+                        <p><a
+                                href="https://www.linkedin.com/posts/nilauvarasi-vs-67120a281_raspberrypi-techskills-iot-activity-7387024483896868864-vjTA">View
+                                Post</a></p>
+                    </noscript>
+                </div>
+            </article>
+
+            <!-- Topic 6 -->
+            <article class="topic">
+                <h3 class="topic-title">Electronics Learning – GUVI</h3>
+                <div class="embed-wrapper">
+                    <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:activity:7382701203425554432"
+                        height="550" width="100%" frameborder="0" allowfullscreen=""
+                        title="LinkedIn Post: GUVI Electronics Learning"></iframe>
+                    <noscript>
+                        <p><a
+                                href="https://www.linkedin.com/posts/nilauvarasi-vs-67120a281_electronics-learning-guvi-activity-7382701203425554432-Bv3d">View
+                                Post</a></p>
+                    </noscript>
+                </div>
+            </article>
+
+            <!-- Topic 7 -->
+            <article class="topic">
+                <h3 class="topic-title">Python Game Development</h3>
+                <div class="embed-wrapper">
+                    <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:activity:7231728003108519936"
+                        height="550" width="100%" frameborder="0" allowfullscreen=""
+                        title="LinkedIn Post: Python Game Development"></iframe>
+                    <noscript>
+                        <p><a
+                                href="https://www.linkedin.com/posts/nilauvarasi-vs-67120a281_python-game-development-course-game-developed-activity-7231728003108519936-b9tt">View
+                                Post</a></p>
+                    </noscript>
+                </div>
+            </article>
+
+            <!-- Topic 8 -->
+            <article class="topic">
+                <h3 class="topic-title">One-Month IoT Internship</h3>
+                <div class="embed-wrapper">
+                    <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:activity:7231730801258717185"
+                        height="550" width="100%" frameborder="0" allowfullscreen=""
+                        title="LinkedIn Post: One Month IoT Internship"></iframe>
+                    <noscript>
+                        <p><a
+                                href="https://www.linkedin.com/posts/nilauvarasi-vs-67120a281_one-month-internship-program-on-iot-conducted-activity-7231730801258717185-P_V3">View
+                                Post</a></p>
+                    </noscript>
+                </div>
+            </article>
+
+            <!-- Topic 9 -->
+            <article class="topic">
+                <h3 class="topic-title">AeroKnotz DroneTech Internship</h3>
+                <div class="embed-wrapper">
+                    <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:activity:7354082212046163969"
+                        height="550" width="100%" frameborder="0" allowfullscreen=""
+                        title="LinkedIn Post: DroneTech Internship"></iframe>
+                    <noscript>
+                        <p><a
+                                href="https://www.linkedin.com/posts/nilauvarasi-vs-67120a281_dronetech-internshiplife-aeroknotzdrones-activity-7354082212046163969-1njv">View
+                                Post</a></p>
+                    </noscript>
+                </div>
+            </article>
+
+            <!-- Topic 10 -->
+            <article class="topic">
+                <h3 class="topic-title">PCB Design Internship</h3>
+                <div class="embed-wrapper">
+                    <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:activity:7354079881237815296"
+                        height="550" width="100%" frameborder="0" allowfullscreen=""
+                        title="LinkedIn Post: PCB Internship"></iframe>
+                    <noscript>
+                        <p><a
+                                href="https://www.linkedin.com/posts/nilauvarasi-vs-67120a281_pcbdesign-internshiplife-herontechnologies-activity-7354079881237815296-XZ7c">View
+                                Post</a></p>
+                    </noscript>
+                </div>
+            </article>
+
+            <!-- Topic 11 -->
+            <article class="topic">
+                <h3 class="topic-title">NSIC Embedded Systems Internship</h3>
+                <div class="embed-wrapper">
+                    <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:activity:7354058820827951104"
+                        height="550" width="100%" frameborder="0" allowfullscreen=""
+                        title="LinkedIn Post: NSIC Embedded Internship"></iframe>
+                    <noscript>
+                        <p><a
+                                href="https://www.linkedin.com/posts/nilauvarasi-vs-67120a281_nsic-internship-embeddedsystems-activity-7354058820827951104-YRaP">View
+                                Post</a></p>
+                    </noscript>
+                </div>
+            </article>
+
+            <!-- Topic 12 -->
+            <article class="topic">
+                <h3 class="topic-title">NPTEL – Industry 4.0 & IIoT</h3>
+                <div class="embed-wrapper">
+                    <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:activity:7353361037640781824"
+                        height="550" width="100%" frameborder="0" allowfullscreen=""
+                        title="LinkedIn Post: NPTEL IIoT"></iframe>
+                    <noscript>
+                        <p><a
+                                href="https://www.linkedin.com/posts/nilauvarasi-vs-67120a281_nptel-industry4-iiot-activity-7353361037640781824-v6wu">View
+                                Post</a></p>
+                    </noscript>
+                </div>
+            </article>
+
+            <!-- Topic 2 -->
+            <article class="topic">
+                <h3 class="topic-title">Arduino workshop / Real-time fire detection</h3>
+
+                <div class="embed-wrapper">
+                    <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:activity:7320796857247399936"
+                        height="550" width="100%" frameborder="0" allowfullscreen=""
+                        title="LinkedIn post: Real-time fire detection">
+                    </iframe>
+
+                    <noscript>
+                        <p>Embedded content requires JavaScript. <a
+                                href="https://www.linkedin.com/posts/nilauvarasi-vs-67120a281_real-time-fire-detection-and-alert-system-activity-7320796857247399936-WZp7"
+                                target="_blank" rel="noopener noreferrer">Open LinkedIn post</a></p>
+                    </noscript>
+                </div>
+            </article>
+
+            <!-- NEW LINKEDIN ACTIVITIES -->
+
+            <!-- Activity 1 -->
+            <article class="topic">
+                <h3 class="topic-title">IoT and Robotics - RINEX TECHNOLOGY</h3>
+                <div class="embed-wrapper">
+                    <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:activity:7320788765407334400"
+                        width="100%" height="550" frameborder="0" allowfullscreen=""
+                        title="LinkedIn Post: Course Completion"></iframe>
+                </div>
+            </article>
+
+            <!-- Activity 2 -->
+            <article class="topic">
+                <h3 class="topic-title">Remote Sensing & GIS for Environmental Studies - IIRS,ISRO,Dehradun</h3>
+                <div class="embed-wrapper">
+                    <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:activity:7320787313318318080"
+                        width="100%" height="550" frameborder="0" allowfullscreen=""
+                        title="LinkedIn Post: Certificate of Completion"></iframe>
+                </div>
+            </article>
+
+            <!-- Activity 3 -->
+            <article class="topic">
+                <h3 class="topic-title">Microsoft Office using AI - Be10x</h3>
+                <div class="embed-wrapper">
+                    <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:activity:7320785568768880640"
+                        width="100%" height="550" frameborder="0" allowfullscreen=""
+                        title="LinkedIn Post: Certificate Achievement"></iframe>
+                </div>
+            </article>
+
+            <!-- Activity 4 -->
+            <article class="topic">
+                <h3 class="topic-title">VLSI for Begginers - NIELIT Calicut</h3>
+                <div class="embed-wrapper">
+                    <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:activity:7320782167196725248"
+                        width="100%" height="550" frameborder="0" allowfullscreen=""
+                        title="LinkedIn Post: Course Completion"></iframe>
+                </div>
+            </article>
+
+            <!-- Activity 5 -->
+            <article class="topic">
+                <h3 class="topic-title">Learnathon 2024 – ICT Academy</h3>
+                <div class="embed-wrapper">
+                    <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:activity:7293871518449614848"
+                        width="100%" height="550" frameborder="0" allowfullscreen=""
+                        title="LinkedIn Post: Learnathon 2024"></iframe>
+                </div>
+            </article>
+
+            <!-- Activity 6 -->
+            <article class="topic">
+                <h3 class="topic-title">Full Stack Development- One month Internship</h3>
+                <div class="embed-wrapper">
+                    <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:activity:7275086103320186880"
+                        width="100%" height="550" frameborder="0" allowfullscreen=""
+                        title="LinkedIn Post: Completed Course"></iframe>
+                </div>
+            </article>
+
+            <!-- Activity 7 -->
+            <article class="topic">
+                <h3 class="topic-title">Touch Sensor Circuit – Electronics Project</h3>
+                <div class="embed-wrapper">
+                    <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:activity:7233504731023753217"
+                        width="100%" height="550" frameborder="0" allowfullscreen=""
+                        title="LinkedIn Post: Touch Sensor"></iframe>
+                </div>
+            </article>
+
+            <!-- Activity 8 -->
+            <article class="topic">
+                <h3 class="topic-title">AWS Academy Certification</h3>
+                <div class="embed-wrapper">
+                    <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:activity:7231733345942953985"
+                        width="100%" height="550" frameborder="0" allowfullscreen=""
+                        title="LinkedIn Post: AWS Academy"></iframe>
+                </div>
+            </article>
+
+
+        </div>
+    </section>
+
+</body>
+
+</html>

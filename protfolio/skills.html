@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protfolio</title>
+    <style>
+ body {
+            margin: 0;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #0b3e4a;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            margin: 10px;
+            position: relative;
+        }
+
+
+
+       header ul {
+            list-style-type: none;
+            padding: 0;
+
+        }
+
+        header ul li {
+            display: inline;
+            margin-right: 20px;
+
+        }
+
+        header ul li a {
+            color: rgb(227, 217, 26);
+            text-decoration: none;
+            font-weight: bold;}
+            /* Download Resume button styling */
+.resume-download {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background-color: rgb(227, 217, 26); /* matches your menu color */
+    color: black;
+    padding: 8px 15px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    border: 2px solid white;
+    transition: 0.3s;
+}
+
+.resume-download:hover {
+    background-color: white;
+    color: black;
+    border-color: rgb(227, 217, 26);
+}
+        .skills-page {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.skills-title {
+    padding-left: 10px;
+    border-left: 5px solid #222;
+    font-size: 30px;
+    margin-bottom: 25px;
+}
+
+.skills-grid {
+    display: flex;
+    gap: 30px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/* Reuse existing card style if present */
+.card {
+    background: #fff;
+    padding: 22px;
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+    flex: 1;
+    min-width: 300px; /* responsive */
+}
+
+.card h2 {
+    margin-top: 0;
+    padding-left: 10px;
+    border-left: 5px solid #222;
+}
+
+.card ul {
+    margin-top: 15px;
+    padding-left: 20px;
+    line-height: 1.7;
+    font-size: 16px;
+}
+
+/* Responsive stacking */
+@media (max-width: 900px) {
+    .skills-grid {
+        flex-direction: column;
+    }
+}
+/* --- Skills: categories + icons --- */
+.skill-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 0;
+    padding-left: 10px;
+    border-left: 5px solid #222;
+    font-size: 22px;
+}
+
+.skill-card {
+    /* reuse .card appearance + allow slightly larger vertical content */
+    padding-bottom: 18px;
+}
+
+.skill-category {
+    margin-bottom: 16px;
+}
+
+.skill-category h3 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 10px 0 6px 0;
+    font-size: 18px;
+    color: #222;
+    font-weight: 700;
+}
+
+.skill-category ul,
+.soft-list {
+    padding-left: 22px;
+    margin: 0;
+    line-height: 1.7;
+    font-size: 15px;
+}
+
+.skill-category ul li,
+.soft-list li {
+    margin-bottom: 8px;
+}
+
+/* icon color */
+.skill-header i,
+.skill-category h3 i {
+    color: #0b3e4a; /* matches your header color */
+}
+
+/* keep the two-card layout but allow technical card to be a bit wider */
+.skills-grid {
+    display: flex;
+    gap: 30px;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+/* Make the left card (technical) slightly wider */
+.skill-card { flex: 1.2; min-width: 320px; }
+.soft-card { flex: 1; min-width: 300px; }
+
+/* Responsive: stack on small screens */
+@media (max-width: 900px) {
+    .skills-grid { flex-direction: column; }
+    .skill-card, .soft-card { width: 100%; }
+}
+/* --- Tech column grid + boxes --- */
+.tech-column {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* grid of small boxes inside technical column */
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* two boxes per row on desktop */
+  gap: 18px;
+  margin-top: 12px;
+}
+
+/* individual technical box */
+.tech-box {
+  background: #fff;
+  padding: 16px 16px;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* box heading */
+.tech-box h3 {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 17px;
+  color: #0b3e4a;
+  font-weight: 700;
+}
+
+/* list inside boxes */
+.tech-box ul {
+  margin: 0;
+  padding-left: 18px;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* large technical card main heading (above grid) */
+.skill-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 0;
+  padding-left: 8px;
+  border-left: 5px solid #222;
+  font-size: 20px;
+}
+
+/* soft card keep as previously styled; ensure it aligns vertically */
+.soft-card {
+  align-self: flex-start;
+}
+
+/* responsive behavior */
+@media (max-width: 1000px) {
+  .tech-grid {
+    grid-template-columns: 1fr; /* single column on narrow screens */
+  }
+
+  /* make top-level columns stack */
+  .skills-grid {
+    flex-direction: column;
+  }
+}
+/* ---------------------------
+   MOBILE RESPONSIVE FIXES
+----------------------------*/
+
+/* Make all images scale */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Fix header layout on mobile */
+@media (max-width: 600px) {
+
+    header {
+        padding: 15px 5px;
+        text-align: center;
+    }
+
+    header img {
+        width: 120px;
+        height: 120px;
+    }
+
+    header h1 {
+        font-size: 22px;
+    }
+
+    header h3 {
+        font-size: 16px;
+    }
+
+    header h4 {
+        font-size: 14px;
+    }
+
+    /* Stack menu items vertically */
+    header ul li {
+        display: block;
+        margin: 5px 0;
+    }
+
+    /* Move resume download button under menu */
+    .resume-download {
+        position: static;
+        display: inline-block;
+        margin-top: 10px;
+    }
+}
+
+/* Make technical skills grid responsive */
+@media (max-width: 900px) {
+    .tech-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* Resize cards on smaller screens */
+@media (max-width: 600px) {
+    .card {
+        padding: 15px;
+        font-size: 14px;
+    }
+
+    .tech-box {
+        padding: 14px;
+    }
+
+    .tech-box h3 {
+        font-size: 16px;
+    }
+
+    .skill-header {
+        font-size: 18px;
+    }
+}
+
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+    <header>
+        <h1>NILAUVARASI VS</h1>
+        <img src="../protfolio/images/cropped_circle_image.png" width="200" height="200">
+        
+        <h4>Electronics and Communication Engineer</h4>
+        <ul>
+
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="skills.html">SKILLS</a></li>
+            <li><a href="projects.html">PROJECTS</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+
+        </ul>
+                <a href="NilaCV.pdf" download class="resume-download">Download Resume</a>
+
+    </header>
+    <div class="skills-page">
+
+    <h1 class="skills-title">Skills</h1>
+
+    <div class="skills-grid">
+
+  <!-- LEFT: Technical boxes grid (each sub-category is a box) -->
+  <div class="card tech-column">
+    <h2 class="skill-header"><i class="fa-solid fa-microchip"></i> Technical Skills</h2>
+
+    <div class="tech-grid">
+      <!-- Electronics box -->
+      <div class="tech-box">
+        <h3><i class="fa-solid fa-bolt"></i> Electronics</h3>
+        <ul>
+          <li>Embedded Systems & IoT</li>
+          <li>Robotics & Automation</li>
+          <li>PCB Design</li>
+        </ul>
+      </div>
+
+      <!-- Programming Languages box -->
+      <div class="tech-box">
+        <h3><i class="fa-solid fa-code"></i> Programming Languages</h3>
+        <ul>
+          <li>C Programming</li>
+          <li>Python Programming</li>
+          <li>Java Programming</li>
+        </ul>
+      </div>
+
+      <!-- Tools box -->
+      <div class="tech-box">
+        <h3><i class="fa-solid fa-screwdriver-wrench"></i> Tools</h3>
+        <ul>
+          <li>Microsoft Office</li>
+          <li>HTML</li>
+          <li>CSS</li>
+        </ul>
+      </div>
+
+      <!-- Gaming box -->
+      <div class="tech-box">
+        <h3><i class="fa-solid fa-gamepad"></i> Gaming</h3>
+        <ul>
+          <li>Python Game Development</li>
+        </ul>
+      </div>
+
+      <!-- Drone box -->
+      <div class="tech-box">
+        <h3><i class="fa-solid fa-helicopter"></i> Drone Technology</h3>
+        <ul>
+          <li>Drone Assembly</li>
+          <li>Flying</li>
+        </ul>
+      </div>
+    </div> <!-- .tech-grid -->
+  </div> <!-- .tech-column -->
+
+  <!-- RIGHT: Soft skills card (leave as-is or keep styling) -->
+  <section class="card soft-card">
+    <h2 class="skill-header"><i class="fa-solid fa-user-gear"></i> Soft Skills</h2>
+    <ul class="soft-list">
+      <li>Critical Thinking</li>
+      <li>Problem Solving</li>
+      <li>Leadership Quality</li>
+      <li>Time Management</li>
+      <li>Adaptability & Flexibility</li>
+      <li>Communication Skills</li>
+      <li>Work Ethic & Positive Attitude</li>
+      <li>Self Motivation</li>
+      <li>Teamwork & Collaborations</li>
+    </ul>
+  </section>
+
+</div> <!-- .skills-grid -->
+
+
+</div>
+
+</body>
+</html>
